@@ -1,0 +1,56 @@
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Section styling */
+section {
+    padding: 20px;
+    margin: 10px 0;
+}
+
+/* Tentang Kami */
+#about {
+    background-color: #e9ecef;
+}
+
+/* Visi & Misi */
+#vision-mission ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#vision-mission li {
+    margin: 10px 0;
+}
+
+/* Kontak */
+#contact {
+    background-color: #e9ecef;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
