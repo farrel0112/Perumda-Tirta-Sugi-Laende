@@ -39,7 +39,7 @@ section {
 #title h1 {
     font-size: 24px;
     margin: 0; /* Hilangkan margin bawaan */
-    color: #333;
+    color: #fff;
 }
 
 #title p {
