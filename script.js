@@ -1,3 +1,3 @@
 window.onload = function() {
-    alert("Selamat datang di profil Perusahaan XYZ!");
+    alert("Selamat datang di Perusahaan Daerah Air Minum Tirta Sugi Laende!");
 };
