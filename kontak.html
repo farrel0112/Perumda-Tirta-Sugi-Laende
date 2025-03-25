@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Layanan WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Reset Default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #007BFF, #00C853);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Styling Tombol */
+        .wa-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 60px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #25D366;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .wa-button i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .wa-button:hover {
+            background-color: #1ebe57;
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pilih Layanan WhatsApp</h1>
+    
+    <div class="container">
+        <!-- Tombol Pengaduan Keluhan -->
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20melaporkan%20keluhan" class="wa-button" target="_blank">
+            <i class="fa fa-exclamation-circle"></i> Pengaduan Keluhan
+        </a>
+
+        <!-- Tombol Customer Service -->
+        <a href="https://wa.me/6289876543210?text=Halo,%20saya%20butuh%20bantuan%20dari%20Customer%20Service" class="wa-button" target="_blank">
+            <i class="fa fa-headset"></i> Customer Service
+        </a>
+    </div>
+
+</body>
+</html>
