@@ -4,35 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Profil Perumda Tirta Sugi Laende">
-    <title>Profil Perumda Tirta Sugi Laende</title>
+    <title>Perumda Tirta Sugi Laende</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="logo">Website Perumda Tirta Sugi Laende</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Daftar</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+
     <!-- Header -->
     <header>
-		<img id="logo" src="LOGO PERUMDA.jpg" alt="Logo">
-		<div id="title">
-			<h1>Selamat Datang di Perusahaan Daerah Air Minum Tirta Sugi Laende</h1>
-			<p>INOVASI, KEPERCAYAAN DAN KUALITAS</p>
-		</div>
-	</header>
+        <img id="logo" src="LOGO PERUMDA.jpg" alt="Logo">
+        <div id="title">
+            <h1>Selamat Datang di Perusahaan Daerah Air Minum Tirta Sugi Laende</h1>
+            <p>INOVASI, KEPERCAYAAN DAN KUALITAS</p>
+        </div>
+    </header>
+	
+	<div class="pimpinan animate">
+        <img src="pimpinan.jpg" alt="Foto Pimpinan" class="foto-pimpinan">
+        <p class="nama-pimpinan">Muhammad Nurhayat Fariki S.H. M.M.</p>
+        <p class="jabatan">Direktur</p>
+    </div>
+	
+	<div class="visi-misi-container animate">
+    <div class="section animate">
+        <h2 class="section-title">MOTTO</h2>
+        <p class="motto">" Kepercayaan Pelanggan Adalah Kinerja Kami "</p>
+    </div>
 
+    <div class="section animate">
+        <h2 class="section-title">VISI</h2>
+        <p class="visi">
+            Terwujudnya Perumda Air Minum Tirta Sugi Laende Yang Sehat <br>
+            dan Mampu Memenuhi Standar Pelayanan 4K
+        </p>
+    </div>
 
-    <!-- Tentang Perusahaan -->
-    <section id="about">
-        <h2>Tentang Kami</h2>
-        <p>Perusahaan Daerah Air Minum Tirta Sugi Laende Kabupaten Muna adalah perusahaan yang bergerak di bidang perairan dan air bersih, berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami.</p>
-    </section>
-
-    <!-- Visi & Misi -->
-    <section id="vision-mission">
-        <h2>Visi dan Misi</h2>
-        <ul>
-            <li><strong>Visi:</strong> Menjadi pemimpin pasar dalam solusi teknologi terdepan.</li>
-            <li><strong>Misi:</strong> Memberikan layanan terbaik yang mengutamakan kepuasan pelanggan.</li>
+    <div class="section animate">
+        <h2 class="section-title">MISI</h2>
+        <ul class="misi">
+            <li><strong>A.</strong> Tercapainya Pemenuhan Standar 4K Air (Kualitas, Kuantitas, Kontinuitas, dan Keterjangkauan)</li>
+            <li><strong>B.</strong> Peningkatan Pelayanan Air Bersih</li>
+            <li><strong>C.</strong> Peningkatan Kinerja Keuangan</li>
         </ul>
-    </section>
+    </div>
+
 
     <!-- Kontak -->
     <section id="contact">
@@ -44,7 +69,12 @@
     <footer>
         <p>&copy; 2025 Perusahaan Daerah Air Minum Tirta Sugi Laende. Semua Hak Cipta Dilindungi.</p>
     </footer>
-
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		let elements = document.querySelectorAll('.animate');
+		elements.forEach(el => el.classList.add('show'));
+});
+</script>
     <script src="script.js"></script>
 </body>
 </html>
