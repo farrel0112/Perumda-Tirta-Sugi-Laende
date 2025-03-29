@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Perumda Tirta Sugi Laende</title>
-    <link rel="stylesheet" href="style.css">
-	<style>
-        body {
-            background-image: url('LOGO PERUMDA.jpg');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-			background-color: #fff;
-            color: white;
-			font-family: Arial, sans-serif;
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-		
-		.form-container {
-            background: rgba(0, 0, 0, 0.7); /* Tambahkan background gelap agar teks lebih jelas */
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            width: 300px;
-            margin: 50px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
         }
 
         input {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: none;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
 
@@ -38,8 +45,8 @@
             width: 100%;
             padding: 10px;
             background-color: #007BFF;
-            border: none;
             color: white;
+            border: none;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -47,24 +54,47 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <div class="form-container">
+    <div class="login-container">
         <h2>Login</h2>
-        <form id="login-form">
-            <label for="phone">Nomor Telepon:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Masuk</button>
-        </form>
-        <p>Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Masuk</button>
+        <p class="error" id="error-msg" style="display: none;">Email atau password salah!</p>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function login() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Simulasi akun (bisa diganti dengan database backend)
+            var akun = {
+                email: "user@example.com",
+                password: "123456",
+                nama: "Budi Santoso",
+                foto: "https://via.placeholder.com/50" // Link gambar profil (bisa diganti)
+            };
+
+            if (email === akun.email && password === akun.password) {
+                // Simpan data login ke localStorage
+                localStorage.setItem("user", JSON.stringify(akun));
+
+                // Redirect ke halaman beranda
+                window.location.href = "beranda.html";
+            } else {
+                document.getElementById("error-msg").style.display = "block";
+            }
+        }
+    </script>
+
 </body>
 </html>
