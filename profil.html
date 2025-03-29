@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Profil</title>
+    <style>
+        /* Reset Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Pengaturan Profil</h2>
+
+        <!-- Nama -->
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" value="Budi Santoso">
+
+        <!-- Alamat -->
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" value="Jakarta, Indonesia">
+
+        <!-- Informasi Pembayaran -->
+        <label for="pembayaran">Informasi Pembayaran:</label>
+        <input type="text" id="pembayaran" value="Bank BCA - 123456789">
+
+        <!-- Ubah Password -->
+        <label for="password">Ubah Password:</label>
+        <input type="password" id="password" placeholder="Masukkan password baru">
+
+        <!-- Tombol Simpan -->
+        <button onclick="simpanPerubahan()">Simpan Perubahan</button>
+
+        <!-- Notifikasi Berhasil -->
+        <p id="notif" class="success" style="display: none;">Perubahan berhasil disimpan!</p>
+    </div>
+
+    <script>
+        function simpanPerubahan() {
+            var nama = document.getElementById("nama").value;
+            var alamat = document.getElementById("alamat").value;
+            var pembayaran = document.getElementById("pembayaran").value;
+            var password = document.getElementById("password").value;
+
+            // Simpan ke localStorage (sementara)
+            localStorage.setItem("nama", nama);
+            localStorage.setItem("alamat", alamat);
+            localStorage.setItem("pembayaran", pembayaran);
+            if (password !== "") {
+                localStorage.setItem("password", password);
+            }
+
+            // Tampilkan notifikasi
+            document.getElementById("notif").style.display = "block";
+
+            // Sembunyikan notifikasi setelah 3 detik
+            setTimeout(() => {
+                document.getElementById("notif").style.display = "none";
+            }, 3000);
+        }
+
+        // Cek jika ada data tersimpan di localStorage dan tampilkan
+        window.onload = function () {
+            if (localStorage.getItem("nama")) {
+                document.getElementById("nama").value = localStorage.getItem("nama");
+            }
+            if (localStorage.getItem("alamat")) {
+                document.getElementById("alamat").value = localStorage.getItem("alamat");
+            }
+            if (localStorage.getItem("pembayaran")) {
+                document.getElementById("pembayaran").value = localStorage.getItem("pembayaran");
+            }
+        };
+    </script>
+
+</body>
+</html>
