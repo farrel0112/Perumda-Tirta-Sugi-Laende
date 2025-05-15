@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Perusahaan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #b3e0ff, #ffffff);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .header-content {
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  flex-wrap: nowrap;
+	}
+
+	.header-content img {
+	  width: 300px;
+	  max-width: 100%;
+	  margin: 0 30px;
+	  height: auto;
+	  object-fit: cover;
+	  border-radius: 10px;
+	  border: 2px solid white;
+	  transform: rotate(15deg);
+	}
+	
+	#fotokanan {
+		transform: rotate(345deg);
+	}
+	
+	#fotokiri {
+		transform: rotate(15deg);
+	}
+
+	.header-text {
+	  text-align: center;
+	  flex: 1;
+	}
+
+    .about {
+      background-color: white;
+      margin: 40px auto;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .about h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    .about p {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #007BFF;
+      color: white;
+    }
+	.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background: linear-gradient(to bottom, #66a6ff, #89f7fe);
+			padding: 15px 20px;
+		}
+		.logo {
+			font-size: 20px;
+			font-weight: bold;
+			color: black;
+		}
+		
+		.nav-links {
+			list-style: none;
+			display: flex;
+			gap: 25px;
+		}
+
+		.nav-links li {
+			position: relative;
+			margin-top: 10px;
+		}
+
+		.nav-links a {
+			text-decoration: none;
+			color: black;
+			font-size: 18px;
+			padding: 8px 12px;
+		}
+
+		.nav-links a:hover {
+			color: yellow;
+		}
+		
+		
+  </style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="logo">TIRTA SUGI LAENDE</div>
+		<ul class="nav-links">
+			<li><a href="index.html">Beranda</a></li>
+			<li><a href="tentang.html">Tentang</a></li>
+			<li><a href="kontak.html">Kontak</a></li>
+			<li><a href="login.html" class="login-btn">Sign In</a></li>
+		</ul>
+	</nav>
+	<header class="header">
+		<div class="container header-content">
+			<img id="fotokiri" src="Foto beranda1.jpg" alt="Logo Kiri">
+			<div class="container">
+				<h1>PERUMDA AIR MINUM TIRTA SUGI LAENDE</h1>
+				<p>Melayani dengan Profesional, Bersih, dan Bertanggung Jawab</p>
+			</div>
+			<img id="fotokanan" src="foto beranda2.jpg" alt="Logo Kanan">
+		</div>
+	</header>
+
+	<section class="about">
+		<div class="container">
+			<h2>Tentang Kami</h2>
+			<p>
+				Perusahaan Daerah Air Minum (Perumda) adalah badan usaha milik daerah yang menyediakan pelayanan air bersih bagi masyarakat. Kami berkomitmen untuk memberikan layanan air yang berkualitas, berkelanjutan, dan terjangkau bagi seluruh pelanggan.
+			</p>
+			<p>
+				Sejak berdiri, Perumda telah melayani lebih dari 100.000 pelanggan di wilayah kami. Visi kami adalah menjadi perusahaan air minum terbaik di tingkat nasional dengan mengutamakan kepuasan pelanggan dan inovasi teknologi.
+			</p>
+		</div>
+		<div class="container">
+			<h2>Motto</h2>
+			<p>
+				Kepercayaan Pelanggan Adalah Kinerja Kami
+			</p>
+		</div>
+		<div class="container">
+			<h2>Visi</h2>
+			<p>
+				Terwujudnya Perumda Air Minum Tirta Sugi Laende Yang Sehat dan Mampu Memenuhi Standar Pelayanan 4K
+			</p>
+		</div>
+		<div class="container">
+			<h2>Misi</h2>
+			<p>
+				A. Tercapainya Pemenuhan Standar 4K Air (Kualitas, Kuantitas, Kontinuitas, dan Keterjangkauan)
+			</p>
+			<p>
+				B. Peningkatan Pelayanan Air bersih
+			</p>
+			<p>
+				C. Peningkatan Kinerja Keuangan
+			</p>
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy; 2025 PERUMDA AIR MINUM. All rights reserved.</p>
+	</footer>
+	<script src="script.js"></script>
+	<script>
+		checkLoginRedirect();
+	</script>
+
+</body>
+</html>
