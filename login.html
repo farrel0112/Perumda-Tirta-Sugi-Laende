@@ -13,20 +13,23 @@
         }
         
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            background-image: url('LOGO PERUMDA.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+			background-color: #fff;
+            color: white;
+			font-family: Arial, sans-serif;
         }
 
         .login-container {
-            background: white;
+            background: rgba(0, 0, 0, 0.7); /* Tambahkan background gelap agar teks lebih jelas */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
             width: 300px;
+            margin: 200px auto;
+            text-align: center;
         }
 
         h2 {
@@ -35,9 +38,9 @@
 
         input {
             width: 100%;
-            padding: 8px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
             border-radius: 5px;
         }
 
@@ -45,8 +48,8 @@
             width: 100%;
             padding: 10px;
             background-color: #007BFF;
-            color: white;
             border: none;
+            color: white;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -59,16 +62,73 @@
             color: red;
             margin-top: 10px;
         }
+		
+		.register-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background: linear-gradient(to bottom, #66a6ff, #89f7fe, #ffffff);
+			padding: 15px 20px;
+		}
+		.logo {
+			font-size: 20px;
+			font-weight: bold;
+			color: black;
+		}
+		
+		.nav-links {
+			list-style: none;
+			display: flex;
+			gap: 25px;
+		}
+
+		.nav-links li {
+			position: relative;
+			margin-top: 10px;
+		}
+
+		.nav-links a {
+			text-decoration: none;
+			color: black;
+			font-size: 18px;
+			padding: 8px 12px;
+		}
+
+		.nav-links a:hover {
+			color: yellow;
+		}
     </style>
 </head>
 <body>
-
+	<nav class="navbar">
+		<div class="logo">TIRTA SUGI LAENDE</div>
+		<ul class="nav-links">
+			<li><a href="index.html">Beranda</a></li>
+			<li><a href="tentang.html">Tentang</a></li>
+			<li><a href="kontak.html">Kontak</a></li>
+			<li><a href="login.html" class="login-btn">Sign In</a></li>
+		</ul>
+	</nav>
     <div class="login-container">
         <h2>Login</h2>
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
         <button onclick="login()">Masuk</button>
         <p class="error" id="error-msg" style="display: none;">Email atau password salah!</p>
+		<p class="register-link">Belum punya akun? <a href="register.html">Daftar</a></p>
     </div>
 
     <script>
@@ -76,20 +136,11 @@
             var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
 
-            // Simulasi akun (bisa diganti dengan database backend)
-            var akun = {
-                email: "user@example.com",
-                password: "123456",
-                nama: "Budi Santoso",
-                foto: "https://via.placeholder.com/50" // Link gambar profil (bisa diganti)
-            };
+            var akun = JSON.parse(localStorage.getItem("user"));
 
-            if (email === akun.email && password === akun.password) {
-                // Simpan data login ke localStorage
-                localStorage.setItem("user", JSON.stringify(akun));
-
-                // Redirect ke halaman beranda
-                window.location.href = "beranda.html";
+            if (akun && email === akun.email && password === akun.password) {
+                localStorage.setItem("isLoggedIn", "true");
+                window.location.href = "index.html";
             } else {
                 document.getElementById("error-msg").style.display = "block";
             }
