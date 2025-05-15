@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cari Lokasi Terdekat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, #66a6ff, #89f7fe, #ffffff);
+      padding: 15px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li {
+      margin-top: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      padding: 8px 12px;
+    }
+
+    .nav-links a:hover {
+      color: yellow;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h1 i {
+      font-size: 24px;
+    }
+
+    .search-box {
+      margin-bottom: 25px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .map-container {
+      background-color: #eee;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+
+    .location-text {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .location-text i {
+      margin-right: 8px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+      <div style="display: flex; align-items: center;">
+		<button class="menu-toggle" onclick="toggleSidebar()">
+		  <i class="fas fa-bars"></i>
+		</button>
+		<div class="logo">TIRTA SUGI LAENDE</div>
+	  </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="login.html" class="login-btn" id="loginBtn" >Sign In</a></li>
+      </ul>
+  </nav>
+
+  <div class="container">
+    <h1><i class="fas fa-search-location"></i> CARI LOKASI TERDEKAT</h1>
+    
+    <div class="search-box">
+      <input type="text" placeholder="Masukkan lokasi anda...">
+    </div>
+
+    <div class="map-container">
+      <div class="location-text">
+        <i class="fas fa-map-marker-alt"></i> Gunakan lokasi anda saat ini
+      </div>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.0419176252!2d106.68943059999999!3d-6.22972885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3ec5ef012bb%3A0x301576d14febdb0!2sJakarta!5e0!3m2!1sid!2sid!4v1682327400000!5m2!1sid!2sid" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+</body>
+</html>
