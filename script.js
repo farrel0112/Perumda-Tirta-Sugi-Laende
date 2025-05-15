@@ -1,3 +1,25 @@
+function toggleSidebar() {
+	document.getElementById('sidebar').classList.toggle('active');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const loginBtn = document.getElementById("loginBtn");
+
+    if (user && loginBtn) {
+        loginBtn.innerHTML = '<i class="fas fa-user"></i>';
+        loginBtn.href = "profil.html"; // atau halaman profil kamu
+    }
+});
+
+function checkLoginRedirect() {
+	const user = JSON.parse(localStorage.getItem("user"));
+	if (!user) {
+		alert("Anda harus login terlebih dahulu.");
+		window.location.href = "login.html";
+	}
+}
+
 window.onload = function() {
     // Menambahkan event listener ke setiap link di navigasi
     let navLinks = document.querySelectorAll(".nav-links a");
@@ -57,4 +79,6 @@ window.onload = function() {
             }
         });
     }
+	
+
 };
