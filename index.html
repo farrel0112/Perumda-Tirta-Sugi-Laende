@@ -6,27 +6,47 @@
     <meta name="description" content="Profil Perumda Tirta Sugi Laende">
     <title>Perumda Tirta Sugi Laende</title>
     <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navigasi -->
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Website Perumda Tirta Sugi Laende</div>
+        <div style="display: flex; align-items: center;">
+			<button class="menu-toggle" onclick="toggleSidebar()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<div class="logo">TIRTA SUGI LAENDE</div>
+		</div>
         <ul class="nav-links">
             <li><a href="index.html">Beranda</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Daftar</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
             <li><a href="kontak.html">Kontak</a></li>
-			<li><a href="profil.html">Profile</a></li>
+            <li><a href="login.html" class="login-btn" id="loginBtn" >Sign In</a></li>
         </ul>
     </nav>
 
-    <!-- Header -->
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+		<ul>
+            <li><a href="lokasi.html"><i class="fas fa-map-marker-alt"></i> Cari Lokasi</a></li>
+            <li><a href="status.html"><i class="fas fa-tachometer-alt"></i> Status Meteran</a></li>
+            <li><a href="riwayat.html"><i class="fas fa-history"></i> Riwayat Transaksi</a></li>
+            <li><a href="tagihan.html"><i class="fas fa-file-invoice"></i> Informasi Tagihan</a></li>
+        </ul>
+    </aside>
+
     <header>
         <img id="logo" src="LOGO PERUMDA.jpg" alt="Logo">
         <div id="title">
-            <h1>Selamat Datang di Perusahaan Daerah Air Minum Tirta Sugi Laende</h1>
-            <p>INOVASI, KEPERCAYAAN DAN KUALITAS</p>
+            <h1>SELAMAT DATANG DI PERUSAHAAN DAERAH<br> AIR MINUM TIRTA SUGI LAENDE</h1>
+            <p>Melayani air bersih berkualitas untuk kehidupan yang lebih baik</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn blue">Layanan Kami</a>
+                <a href="tentang.html" class="btn white">Pelajari Lebih Lanjut</a>
+            </div>
         </div>
     </header>
 	
@@ -36,28 +56,7 @@
         <p class="jabatan">Direktur</p>
     </div>
 	
-	<div class="visi-misi-container animate">
-    <div class="section animate">
-        <h2 class="section-title">MOTTO</h2>
-        <p class="motto">" Kepercayaan Pelanggan Adalah Kinerja Kami "</p>
-    </div>
-
-    <div class="section animate">
-        <h2 class="section-title">VISI</h2>
-        <p class="visi">
-            Terwujudnya Perumda Air Minum Tirta Sugi Laende Yang Sehat <br>
-            dan Mampu Memenuhi Standar Pelayanan 4K
-        </p>
-    </div>
-
-    <div class="section animate">
-        <h2 class="section-title">MISI</h2>
-        <ul class="misi">
-            <li><strong>A.</strong> Tercapainya Pemenuhan Standar 4K Air (Kualitas, Kuantitas, Kontinuitas, dan Keterjangkauan)</li>
-            <li><strong>B.</strong> Peningkatan Pelayanan Air Bersih</li>
-            <li><strong>C.</strong> Peningkatan Kinerja Keuangan</li>
-        </ul>
-    </div>
+	
 
 
     <!-- Kontak -->
