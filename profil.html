@@ -1,140 +1,182 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengaturan Profil</title>
-    <style>
-        /* Reset Style */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profil - Perumda Tirta Sugi Laende</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        body {
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    body {
+      background-image: url('LOGO PERUMDA.jpg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #fff;
+      color: white;
+    }
 
-        .container {
-            width: 350px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, #66a6ff, #89f7fe, #ffffff);
+      padding: 15px 20px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
 
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    .nav-links li {
+      margin-top: 10px;
+    }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      padding: 8px 12px;
+    }
 
-        button:hover {
-            background-color: #0056b3;
-        }
+    .nav-links a:hover {
+      color: yellow;
+    }
 
-        .success {
-            color: green;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+    .profile-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      margin: 150px auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 10px 16px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+	  transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #0056b3;
+    }
+	
+	.logout-btn {
+      width: 100%;
+	  background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 35px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	}
+
+	.logout-btn:hover {
+      background-color: #c82333;
+	}
+
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Pengaturan Profil</h2>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">TIRTA SUGI LAENDE</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html" class="login-btn">Sign In</a></li>
+    </ul>
+  </nav>
 
-        <!-- Nama -->
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" value="Budi Santoso">
+  <!-- Form Edit Profil -->
+  <div class="profile-container">
+    <h2>Ubah Profil Pengguna</h2>
+    <input type="text" id="nama" placeholder="Nama Lengkap">
+    <input type="text" id="alamat" placeholder="Alamat">
+    <input type="text" id="noPelanggan" placeholder="Nomor Pelanggan">
+    <input type="text" id="telepon" placeholder="Nomor Telepon">
+    <input type="password" id="password" placeholder="Password">
+    <button class="login-button" onclick="updateProfile()">Simpan Perubahan</button>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Ambil data user jika ada
+    window.onload = function() {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        document.getElementById("nama").value = user.nama || "";
+        document.getElementById("alamat").value = user.alamat || "";
+        document.getElementById("noPelanggan").value = user.noPelanggan || "";
+        document.getElementById("telepon").value = user.telepon || "";
+        document.getElementById("password").value = user.password || "";
+      }
+    }
 
-        <!-- Alamat -->
-        <label for="alamat">Alamat:</label>
-        <input type="text" id="alamat" value="Jakarta, Indonesia">
+    function updateProfile() {
+      const updatedUser = {
+        nama: document.getElementById("nama").value,
+        alamat: document.getElementById("alamat").value,
+        noPelanggan: document.getElementById("noPelanggan").value,
+        telepon: document.getElementById("telepon").value,
+        password: document.getElementById("password").value,
+        foto: "https://via.placeholder.com/50"
+      };
 
-        <!-- Informasi Pembayaran -->
-        <label for="pembayaran">Informasi Pembayaran:</label>
-        <input type="text" id="pembayaran" value="Bank BCA - 123456789">
-
-        <!-- Ubah Password -->
-        <label for="password">Ubah Password:</label>
-        <input type="password" id="password" placeholder="Masukkan password baru">
-
-        <!-- Tombol Simpan -->
-        <button onclick="simpanPerubahan()">Simpan Perubahan</button>
-
-        <!-- Notifikasi Berhasil -->
-        <p id="notif" class="success" style="display: none;">Perubahan berhasil disimpan!</p>
-    </div>
-
-    <script>
-        function simpanPerubahan() {
-            var nama = document.getElementById("nama").value;
-            var alamat = document.getElementById("alamat").value;
-            var pembayaran = document.getElementById("pembayaran").value;
-            var password = document.getElementById("password").value;
-
-            // Simpan ke localStorage (sementara)
-            localStorage.setItem("nama", nama);
-            localStorage.setItem("alamat", alamat);
-            localStorage.setItem("pembayaran", pembayaran);
-            if (password !== "") {
-                localStorage.setItem("password", password);
-            }
-
-            // Tampilkan notifikasi
-            document.getElementById("notif").style.display = "block";
-
-            // Sembunyikan notifikasi setelah 3 detik
-            setTimeout(() => {
-                document.getElementById("notif").style.display = "none";
-            }, 3000);
-        }
-
-        // Cek jika ada data tersimpan di localStorage dan tampilkan
-        window.onload = function () {
-            if (localStorage.getItem("nama")) {
-                document.getElementById("nama").value = localStorage.getItem("nama");
-            }
-            if (localStorage.getItem("alamat")) {
-                document.getElementById("alamat").value = localStorage.getItem("alamat");
-            }
-            if (localStorage.getItem("pembayaran")) {
-                document.getElementById("pembayaran").value = localStorage.getItem("pembayaran");
-            }
-        };
-    </script>
-
+      localStorage.setItem("user", JSON.stringify(updatedUser));
+      alert("Profil berhasil diperbarui!");
+    }
+	
+	function logout() {
+	  localStorage.removeItem("user"); // atau localStorage.clear() kalau ingin hapus semuanya
+  	  alert("Anda telah logout.");
+	  window.location.href = "login.html"; // arahkan ke halaman login
+	}
+	
+	checkLoginRedirect();
+  </script>
 </body>
 </html>
