@@ -10,13 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar">
         <div style="display: flex; align-items: center;">
 			<button class="menu-toggle" onclick="toggleSidebar()">
 				<i class="fas fa-bars"></i>
 			</button>
+            <i class="fas fa-home logo-home"></i>
 			<div class="logo">TIRTA SUGI LAENDE</div>
 		</div>
         <ul class="nav-links">
@@ -26,15 +25,17 @@
             <li><a href="login.html" class="login-btn" id="loginBtn" >Sign In</a></li>
         </ul>
     </nav>
-
-    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <button class="close-btn" onclick="toggleSidebar()">×</button>
 		<ul>
+            <li><a href="profil.html"><i class="fas fa-user"></i> Profil Pelanggan</a></li>
             <li><a href="lokasi.html"><i class="fas fa-map-marker-alt"></i> Cari Lokasi</a></li>
-            <li><a href="status.html"><i class="fas fa-tachometer-alt"></i> Status Meteran</a></li>
+            <li><a href="status.html"><i class="fas fa-tint"></i> Status Meteran</a></li>
             <li><a href="riwayat.html"><i class="fas fa-history"></i> Riwayat Transaksi</a></li>
             <li><a href="tagihan.html"><i class="fas fa-file-invoice"></i> Informasi Tagihan</a></li>
+            <li><a href="pembayaran.html"><i class="fas fa-money-bill"></i> Pembayaran</a></li>
+            <li><a href="pemasangan.html"><i class="fas fa-tachometer-alt"></i> Pemasangan Meteran</a></li>
+            <li><a href="bahasa.html"><i class="fas fa-globe"></i> Bahasa</a></li>
         </ul>
     </aside>
 
@@ -56,24 +57,42 @@
         <p class="jabatan">Direktur</p>
     </div>
 	
-	
+	<section id="fitur" class="fitur-unggulan-section">
+        <h2 class="fitur-title">Fitur Unggulan</h2>
+        <div class="fitur-unggulan-container">
+        <div class="fitur-card">
+            <i class="fa-solid fa-credit-card fitur-icon"></i>
+            <h3>Pembayaran Praktis</h3>
+            <p>Pembayaran air bulanan dan utilitas secara mudah dan cepat.</p>
+        </div>
+        <div class="fitur-card">
+            <i class="fa-solid fas fa-clock fitur-icon"></i>
+            <h3>Layanan 24 jam</h3>
+            <p>Layanan Administrasi tanpa adanya batasan waktu.</p>
+        </div>
+        <div class="fitur-card">
+            <i class="fa-solid fas fa-tint fitur-icon"></i>
+            <h3>Kualitas Air Terbaik</h3>
+            <p>Jaminan kualitas air sesuai standar internasional WHO.</p>
+        </div>
+        <div class="fitur-card">
+            <i class="fa-solid fa-money-bill fitur-icon"></i>
+            <h3>Biaya Yang Terjangkau</h3>
+            <p>Tarif terjangkau berbasis digitalisasi dan praktis.</p>
+        </div>
+        </div>
+    </section>
 
-
-    <!-- Kontak -->
     <section id="contact">
         <h2>Kontak Kami</h2>
         <p>Jika Anda ingin menghubungi kami, silakan kirim email ke <a href="mailto:info@xyz.com">info@xyz.com</a></p>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Perusahaan Daerah Air Minum Tirta Sugi Laende. Semua Hak Cipta Dilindungi.</p>
     </footer>
 	<script>
-	document.addEventListener("DOMContentLoaded", function() {
-		let elements = document.querySelectorAll('.animate');
-		elements.forEach(el => el.classList.add('show'));
-});
+	
 </script>
     <script src="script.js"></script>
 </body>
