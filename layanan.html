@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layanan Kami - Tirta Sugi Laende</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(255, 255, 255, 0.111);
+    }
+    .logo-img {
+      width: 30px;
+      margin-right: 5px;
+      object-fit: contain;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, #66a6ff, #89f7fe, rgba(247, 247, 247, 0.111));
+      padding: 15px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li {
+      margin-top: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      padding: 8px 12px;
+    }
+
+    .nav-links a:hover {
+      color: yellow;
+    }
+
+    .sign-in-btn {
+      padding: 6px 14px;
+      background: white;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sign-in-btn:hover {
+      background: #e6e6e6;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: black;
+      margin-right: 10px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 240px;
+      height: 100%;
+      background-color: #2c3e50;
+      color: white;
+      padding-top: 70px;
+      transition: left 0.3s ease;
+      z-index: 999;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+      color: yellow;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      padding: 15px 20px;
+      border-bottom: 1px solid #444;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      gap: 10px;
+    }
+
+    .sidebar ul li a:hover {
+      color: yellow;
+      text-decoration: underline;
+    }
+
+    .layanan-container {
+    margin: 100px auto;
+    max-width: 1000px;
+    padding: 20px;
+    }
+
+    .layanan-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    }
+
+    .layanan-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    }
+
+    .layanan-item {
+    background-color: #a0f0ff;
+    border-radius: 10px;
+    width: 220px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    }
+
+    .layanan-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .layanan-item i {
+    font-size: 32px;
+    color: #3498db;
+    margin-bottom: 15px;
+    }
+
+    .layanan-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+
+    .layanan-item p {
+    font-size: 14px;
+    color: #555;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div style="display: flex; align-items: center;">
+      <button class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <img src="LOGO PERUMDA.jpg" alt="Logo" class="logo-img" />
+      <div class="logo">TIRTA SUGI LAENDE</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html" class="sign-in-btn">Sign In</a></li>
+    </ul>
+  </nav>
+  <aside class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <ul>
+      <li><a href="profil.html"><i class="fas fa-user"></i> Profil Pelanggan</a></li>
+      <li><a href="lokasi.html"><i class="fas fa-map-marker-alt"></i> Cari Lokasi</a></li>
+      <li><a href="status.html"><i class="fas fa-tint"></i> Status Meteran</a></li>
+      <li><a href="riwayat.html"><i class="fas fa-history"></i> Riwayat Transaksi</a></li>
+      <li><a href="tagihan.html"><i class="fas fa-file-invoice"></i> Informasi Tagihan</a></li>
+      <li><a href="pembayaran.html"><i class="fas fa-money-bill"></i> Pembayaran</a></li>
+      <li><a href="pemasangan.html"><i class="fas fa-tachometer-alt"></i> Pemasangan Meteran</a></li>
+      <li><a href="bahasa.html"><i class="fas fa-globe"></i> Bahasa</a></li>
+    </ul>
+  </aside>
+
+  <div class="layanan-container">
+    <div class="layanan-title">Layanan Kami</div>
+    <div class="layanan-list">
+      <a href="profil.html" class="layanan-item">
+        <i class="fas fa-user"></i>
+        <h3>Profil Pelanggan</h3>
+        <p>Lihat dan ubah informasi pelanggan Anda.</p>
+      </a>
+      <a href="lokasi.html" class="layanan-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Cari Lokasi</h3>
+        <p>Temukan lokasi kantor cabang terdekat.</p>
+      </a>
+      <a href="status.html" class="layanan-item">
+        <i class="fas fa-tint"></i>
+        <h3>Status Meteran</h3>
+        <p>Cek status terkini meteran air Anda.</p>
+      </a>
+      <a href="riwayat.html" class="layanan-item">
+        <i class="fas fa-history"></i>
+        <h3>Riwayat Transaksi</h3>
+        <p>Review semua transaksi yang telah dilakukan.</p>
+      </a>
+      <a href="tagihan.html" class="layanan-item">
+        <i class="fas fa-file-invoice"></i>
+        <h3>Informasi Tagihan</h3>
+        <p>Detail tagihan bulanan dan histori pembayaran.</p>
+      </a>
+      <a href="pembayaran.html" class="layanan-item">
+        <i class="fas fa-money-bill"></i>
+        <h3>Pembayaran</h3>
+        <p>Lakukan pembayaran tagihan dengan mudah.</p>
+      </a>
+      <a href="pemasangan.html" class="layanan-item">
+        <i class="fas fa-tachometer-alt"></i>
+        <h3>Pemasangan Meteran</h3>
+        <p>Ajukan permintaan pemasangan meteran baru.</p>
+      </a>
+      <a href="bahasa.html" class="layanan-item">
+        <i class="fas fa-globe"></i>
+        <h3>Bahasa</h3>
+        <p>Pilih bahasa yang Anda inginkan untuk layanan.</p>
+      </a>
+    </div>
+  </div>
+<script src="script.js"></script>
+  <script>
+    window.onload = function() {
+      checkLoginRedirect();
+    };
+  </script>
+</body>
+</html>
