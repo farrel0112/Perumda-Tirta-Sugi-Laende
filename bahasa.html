@@ -132,11 +132,77 @@
         background-color: #0056b3;
     }
 
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+        margin-right: 10px;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 240px;
+        height: 100%;
+        background-color: #2c3e50;
+        color: white;
+        padding-top: 70px;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px; right: 15px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+	    color: yellow;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #444;
+    }
+
+    .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        gap: 10px;
+    }
+
+    .sidebar ul li a:hover {
+        color: yellow;
+        text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
   <nav class="navbar">
     <div style="display: flex; align-items: center;">
+      <button class="menu-toggle" onclick="toggleSidebar()">
+		<i class="fas fa-bars"></i>
+	  </button>
       <img src="LOGO PERUMDA.jpg" alt="Logo" class="logo-img" />
       <div class="logo">TIRTA SUGI LAENDE</div>
     </div>
@@ -147,6 +213,19 @@
       <li><a href="login.html" class="sign-in-btn">Sign In</a></li>
     </ul>
   </nav>
+  <aside class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+		<ul>
+            <li><a href="profil.html"><i class="fas fa-user"></i> Profil Pelanggan</a></li>
+            <li><a href="lokasi.html"><i class="fas fa-map-marker-alt"></i> Cari Lokasi</a></li>
+            <li><a href="status.html"><i class="fas fa-tint"></i> Status Meteran</a></li>
+            <li><a href="riwayat.html"><i class="fas fa-history"></i> Riwayat Transaksi</a></li>
+            <li><a href="tagihan.html"><i class="fas fa-file-invoice"></i> Informasi Tagihan</a></li>
+            <li><a href="pembayaran.html"><i class="fas fa-money-bill"></i> Pembayaran</a></li>
+            <li><a href="pemasangan.html"><i class="fas fa-tachometer-alt"></i> Pemasangan Meteran</a></li>
+            <li><a href="bahasa.html"><i class="fas fa-globe"></i> Bahasa</a></li>
+        </ul>
+    </aside>
 
   <div class="container">
     <h2>PILIH BAHASA</h2>
@@ -164,5 +243,7 @@
 
     <a href="index.html" class="simpan-btn">Simpan</a>
   </div>
+  </script>
+    <script src="script.js"></script>
 </body>
 </html>
