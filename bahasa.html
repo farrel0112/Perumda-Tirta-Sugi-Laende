@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pemilihan Bahasa - Tirta Sugi Laende</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(255, 255, 255, 0.111);
+    }
+
+    .logo-img {
+      width: 30px;
+      margin-right: 5px;
+      object-fit: contain;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, #66a6ff, #89f7fe, rgba(247, 247, 247, 0.111));
+      padding: 15px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li {
+      margin-top: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      padding: 8px 12px;
+    }
+
+    .nav-links a:hover {
+      color: yellow;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #f3f3f3;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .language-option {
+      margin: 12px 0;
+    }
+
+    select {
+      width: 80%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .sign-in-btn {
+      padding: 6px 14px;
+      background: white;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sign-in-btn:hover {
+      background: #e6e6e6;
+    }
+
+    .simpan-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+
+    .simpan-btn:hover {
+        background-color: #0056b3;
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div style="display: flex; align-items: center;">
+      <img src="LOGO PERUMDA.jpg" alt="Logo" class="logo-img" />
+      <div class="logo">TIRTA SUGI LAENDE</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html" class="sign-in-btn">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>PILIH BAHASA</h2>
+
+    <div class="language-option">
+      <label for="bahasa">Silakan pilih bahasa Anda:</label>
+      <select id="bahasa" name="bahasa">
+        <option value="id">Bahasa Indonesia</option>
+        <option value="en">English</option>
+        <option value="jv">Jawa</option>
+        <option value="su">Sunda</option>
+        <option value="ar">العربية (Arab)</option>
+      </select>
+    </div>
+
+    <a href="index.html" class="simpan-btn">Simpan</a>
+  </div>
+</body>
+</html>
