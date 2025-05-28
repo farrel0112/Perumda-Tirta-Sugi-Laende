@@ -1,11 +1,9 @@
-/* Reset default browser styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -17,7 +15,6 @@ body {
     color: #333;
 }
 
-/* Navigasi */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -27,11 +24,15 @@ body {
 	position: relative;
 }
 
+.logo-home {
+    margin-left : 5px;
+}
+
 .logo {
     font-size: 20px;
     font-weight: bold;
     color: black;
-	margin-left: 10px;
+	margin-left: 12px;
 }
 
 .nav-links {
@@ -66,7 +67,6 @@ body {
 	margin-right: 10px;
 }
 
-/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
@@ -176,12 +176,11 @@ body {
     margin-top: 10px;
 }
 
-/* Header */
 header {
     background: linear-gradient(to bottom, #89f7fe, #ffffff);
     color: black;
     display: flex;
-    align-items: center-top; /* Supaya logo dan judul sejajar */
+    align-items: center-top;
     padding: 10px;
 }
 
@@ -196,14 +195,14 @@ header {
 
 #title h1 {
     font-size: 24px;
-    margin-left: 20px; /* Hilangkan margin bawaan */
+    margin-left: 20px;
     color: black;
 }
 
 #title p {
     font-size: 18px;
     color: black;
-    margin: 5px 0 0; /* Beri sedikit jarak atas */
+    margin: 5px 0 0;
 	margin-left: 20px;
 }
 
@@ -243,7 +242,6 @@ header {
 	color: #89f7fe;
 }
 
-/* Section styling */
 section {
     padding: 20px;
     margin: 10px auto;
@@ -251,18 +249,17 @@ section {
     text-align: center;
 }
 
-/* Bagian Foto Pimpinan */
 .pimpinan {
     text-align: center;
     margin-top: 50px;
 }
 
 .foto-pimpinan {
-    width: 200px; /* Ukuran foto */
+    width: 200px;
     height: 230px;
     object-fit: cover;
     border-radius: 10px;
-    border: 3px solid #0073e6; /* Bingkai biru */
+    border: 3px solid #89f7fe;
 }
 
 .nama-pimpinan {
@@ -278,64 +275,60 @@ section {
     color: #0073e6;
 }
 
-
-/* Tentang Kami */
-.visi-misi-container {
-    width: 80%;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+.fitur-unggulan-section {
+  padding: 60px 40px;
+  background-color: #ffffff;
 }
 
-.section {
-    margin-bottom: 20px;
+.fitur-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
 }
 
-.section-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background: yellow;
-    display: inline-block;
-    padding: 5px 15px;
-    border-radius: 5px;
-    color: black;
+.fitur-unggulan-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.motto {
-    font-size: 22px;
-    font-weight: bold;
-    color: black;
-    font-style: italic;
+.fitur-card {
+  background-color: #89f6fe34;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 30px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.visi {
-    font-size: 18px;
-    color: red;
-    font-weight: bold;
+.fitur-card h3 {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #2b422c;
 }
 
-.misi {
-    font-size: 18px;
-    list-style: none;
-    padding: 0;
+.fitur-card p {
+  font-size: 16px;
+  color: #444;
 }
 
-.misi li {
-    color: red;
-    font-weight: bold;
-    margin: 5px 0;
+.fitur-icon {
+  font-size: 30px;
+  color: #000000;
+  margin-bottom: 10px;
 }
 
-/* Awalnya elemen tidak terlihat */
 .animate {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Saat elemen masuk ke layar */
 .animate.show {
     opacity: 1;
     transform: translateY(0);
@@ -345,11 +338,61 @@ html {
     scroll-behavior: smooth;
 }
 
-
-/* Footer */
 footer {
     text-align: center;
     background-color: #333;
     color: #fff;
     padding: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .form-container {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #logo {
+        margin: 0;
+    }
+
+    #title {
+        margin: 10px 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .fitur-unggulan-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fitur-card {
+        width: 90%;
+    }
+}
+
