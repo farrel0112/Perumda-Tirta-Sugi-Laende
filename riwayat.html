@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Status Meteran Air</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riwayat Transaksi - Tirta Sugi Laende</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
     }
 
     body {
-      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+      background-color: rgba(255, 255, 255, 0.111);
+    }
+
+    .logo-img {
+      width: 30px;
+      margin-right: 5px;
+      object-fit: contain;
     }
 
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(to bottom, #66a6ff, #89f7fe, #ffffff);
+      background: linear-gradient(to bottom, #66a6ff, #89f7fe, rgba(247, 247, 247, 0.111));
       padding: 15px 20px;
     }
 
@@ -51,121 +58,176 @@
       color: yellow;
     }
 
-    /* Card */
-    .status-container {
-      max-width: 400px;
-      margin: 60px auto;
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #f3f3f3;
       padding: 30px;
-      background-color: #eaeaea;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
       text-align: center;
-    }
-
-    .status-container h2 {
       font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .status-container h3 {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
       font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 25px;
     }
 
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      gap: 10px;
+    }
+
+    .filters button,
+    .filters select {
+      padding: 8px 12px;
+      border-radius: 8px;
       border: 1px solid #ccc;
+      background-color: white;
+      font-size: 14px;
     }
 
-    .submit-btn {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      border: none;
-      border-radius: 5px;
-      color: white;
+    .filters button {
       font-weight: bold;
       cursor: pointer;
     }
 
-    .submit-btn:hover {
-      background-color: #0056b3;
+    .filters button:hover {
+      background-color: #eee;
     }
 
-    /* Responsive */
-    @media (max-width: 480px) {
-      .status-container {
-        margin: 30px 15px;
-        padding: 20px;
-      }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
 
-      .navbar ul {
-        gap: 10px;
-      }
+    thead {
+      background-color: #dcdcdc;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background-color: #ececec;
+    }
+
+    .sign-in-btn {
+      padding: 6px 14px;
+      background: white;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sign-in-btn:hover {
+      background: #e6e6e6;
     }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
-      <div style="display: flex; align-items: center;">
-		<button class="menu-toggle" onclick="toggleSidebar()">
-		  <i class="fas fa-bars"></i>
-		</button>
-		<div class="logo">TIRTA SUGI LAENDE</div>
-	  </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="login.html" class="login-btn" id="loginBtn" >Sign In</a></li>
-      </ul>
+    <div style="display: flex; align-items: center;">
+      <img src="LOGO PERUMDA.jpg" alt="Logo" class="logo-img" />
+      <div class="logo">TIRTA SUGI LAENDE</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html" class="sign-in-btn">Sign In</a></li>
+    </ul>
   </nav>
 
-  <div class="status-container">
-    <h2>Status</h2>
-    <h3>Meteran Air</h3>
-    <form>
-      <div class="form-group">
-        <label for="nomor">Nomor Pelanggan</label>
-        <input type="text" id="nomor" placeholder="Masukkan No Pelanggan">
-      </div>
+  <div class="container">
+    <h2>RIWAYAT TRANSAKSI</h2>
 
-      <div class="form-group">
-        <label>Periode Tagihan</label>
-        <select>
-          <option value="">Bulan</option>
-          <option value="januari">Januari</option>
-          <option value="februari">Februari</option>
-          <option value="maret">Maret</option>
-          <!-- Tambahkan bulan lainnya -->
-        </select>
-        <br><br>
-        <select>
-          <option value="">Tahun</option>
-          <option value="2025">2025</option>
-          <option value="2024">2024</option>
-          <!-- Tambahkan tahun lainnya -->
-        </select>
-      </div>
+    <div class="summary">
+      <div><strong>2 Transaksi</strong></div>
+      <div><strong>Rp.300.000</strong></div>
+    </div>
 
-      <button type="submit" class="submit-btn">Cek Status</button>
-    </form>
+    <div class="filters">
+      <button>FILTER</button>
+      <select>
+        <option>Desember</option>
+        <option>November</option>
+        <option>Oktober</option>
+        <option>September</option>
+        <option>Agustus</option>
+        <option>Juli</option>
+        <option>Juni</option>
+        <option>Mei</option>
+        <option>April</option>
+        <option>Maret</option>
+        <option>Februari</option>
+        <option>Januari</option>
+      </select>
+      <select>
+        <option>2025</option>
+        <option>2024</option>
+        <option>2023</option>
+      </select>
+      <button>CARI</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tanggal Transaksi</th>
+          <th>Periode Tagihan</th>
+          <th>Jumlah Pembayaran</th>
+          <th>Status Pembayaran</th>
+          <th>Metode Pembayaran</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01/04/2025</td>
+          <td>April 2025</td>
+          <td>Rp.150.000</td>
+          <td>LUNAS</td>
+          <td>QRIS</td>
+        </tr>
+        <tr>
+          <td>01/02/2025</td>
+          <td>April 2025</td>
+          <td>Rp.150.000</td>
+          <td>LUNAS</td>
+          <td>VA</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
+  <script src="script.js"></script>
+  <script>
+    window.onload = function() {
+      checkLoginRedirect();
+    };
+  </script>
 </body>
 </html>
