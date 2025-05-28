@@ -1,84 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profil Perusahaan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Perusahaan - Tirta Sugi Laende</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
     }
 
     body {
-      font-family: 'Arial', sans-serif;
       background: linear-gradient(to bottom, #ffffff, #b3e0ff, #ffffff);
       color: #333;
-      line-height: 1.6;
     }
 
-    .container {
-      width: 100%;
-      margin: 0 auto;
-      padding: 40px 20px;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, #66a6ff, #89f7fe);
+      padding: 12px 20px;
+    }
+
+    .navbar .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 30px;
+      margin-right: 10px;
+      object-fit: contain;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: yellow;
+    }
+
+    .login-btn {
+      border: 1px solid #ccc;
+      padding: 6px 14px;
+      border-radius: 6px;
+      background: white;
+      font-weight: bold;
     }
 
     .header {
+      text-align: center;
       background-color: #007BFF;
       color: white;
-      text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
 
     .header-content {
-	  display: flex;
-	  align-items: center;
-	  justify-content: space-between;
-	  flex-wrap: nowrap;
-	}
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-	.header-content img {
-	  width: 300px;
-	  max-width: 100%;
-	  margin: 0 30px;
-	  height: auto;
-	  object-fit: cover;
-	  border-radius: 10px;
-	  border: 2px solid white;
-	  transform: rotate(15deg);
-	}
-	
-	#fotokanan {
-		transform: rotate(345deg);
-	}
-	
-	#fotokiri {
-		transform: rotate(15deg);
-	}
+    .header-content img {
+      width: 250px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid white;
+    }
 
-	.header-text {
-	  text-align: center;
-	  flex: 1;
-	}
+    #fotokiri { transform: rotate(10deg); }
+    #fotokanan { transform: rotate(-10deg); }
 
+    .header-text {
+      flex: 1;
+      text-align: center;
+    }
+
+    .header-text h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .header-text p {
+      font-size: 16px;
+      font-style: italic;
+    }
     .about {
-      background-color: white;
-      margin: 40px auto;
+      background: white;
+      margin: 50px auto;
       padding: 40px 20px;
-      border-radius: 10px;
+      border-radius: 12px;
+      max-width: 1000px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .about h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+      font-size: 24px;
       color: #007BFF;
+      margin-bottom: 15px;
     }
 
     .about p {
-      margin-bottom: 15px;
       font-size: 16px;
+      margin-bottom: 12px;
     }
 
     footer {
@@ -86,109 +137,84 @@
       padding: 20px;
       background-color: #007BFF;
       color: white;
+      font-size: 14px;
     }
-	.navbar {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			background: linear-gradient(to bottom, #66a6ff, #89f7fe);
-			padding: 15px 20px;
-		}
-		.logo {
-			font-size: 20px;
-			font-weight: bold;
-			color: black;
-		}
-		
-		.nav-links {
-			list-style: none;
-			display: flex;
-			gap: 25px;
-		}
 
-		.nav-links li {
-			position: relative;
-			margin-top: 10px;
-		}
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
 
-		.nav-links a {
-			text-decoration: none;
-			color: black;
-			font-size: 18px;
-			padding: 8px 12px;
-		}
+      .header-content img {
+        width: 200px;
+      }
 
-		.nav-links a:hover {
-			color: yellow;
-		}
-		
-		
+      .header-text h1 {
+        font-size: 22px;
+      }
+
+      .about {
+        margin: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-	<nav class="navbar">
-		<div class="logo">TIRTA SUGI LAENDE</div>
-		<ul class="nav-links">
-			<li><a href="index.html">Beranda</a></li>
-			<li><a href="tentang.html">Tentang</a></li>
-			<li><a href="kontak.html">Kontak</a></li>
-			<li><a href="login.html" class="login-btn">Sign In</a></li>
-		</ul>
-	</nav>
-	<header class="header">
-		<div class="container header-content">
-			<img id="fotokiri" src="Foto beranda1.jpg" alt="Logo Kiri">
-			<div class="container">
-				<h1>PERUMDA AIR MINUM TIRTA SUGI LAENDE</h1>
-				<p>Melayani dengan Profesional, Bersih, dan Bertanggung Jawab</p>
-			</div>
-			<img id="fotokanan" src="foto beranda2.jpg" alt="Logo Kanan">
-		</div>
-	</header>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="LOGO PERUMDA.jpg" alt="Logo" class="logo-img">
+      <div class="logo">TIRTA SUGI LAENDE</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html" id="loginBtn" class="login-btn">Sign In</a></li>
+    </ul>
+  </nav>
 
-	<section class="about">
-		<div class="container">
-			<h2>Tentang Kami</h2>
-			<p>
-				Perusahaan Daerah Air Minum (Perumda) adalah badan usaha milik daerah yang menyediakan pelayanan air bersih bagi masyarakat. Kami berkomitmen untuk memberikan layanan air yang berkualitas, berkelanjutan, dan terjangkau bagi seluruh pelanggan.
-			</p>
-			<p>
-				Sejak berdiri, Perumda telah melayani lebih dari 100.000 pelanggan di wilayah kami. Visi kami adalah menjadi perusahaan air minum terbaik di tingkat nasional dengan mengutamakan kepuasan pelanggan dan inovasi teknologi.
-			</p>
-		</div>
-		<div class="container">
-			<h2>Motto</h2>
-			<p>
-				Kepercayaan Pelanggan Adalah Kinerja Kami
-			</p>
-		</div>
-		<div class="container">
-			<h2>Visi</h2>
-			<p>
-				Terwujudnya Perumda Air Minum Tirta Sugi Laende Yang Sehat dan Mampu Memenuhi Standar Pelayanan 4K
-			</p>
-		</div>
-		<div class="container">
-			<h2>Misi</h2>
-			<p>
-				A. Tercapainya Pemenuhan Standar 4K Air (Kualitas, Kuantitas, Kontinuitas, dan Keterjangkauan)
-			</p>
-			<p>
-				B. Peningkatan Pelayanan Air bersih
-			</p>
-			<p>
-				C. Peningkatan Kinerja Keuangan
-			</p>
-		</div>
-	</section>
+  <header class="header">
+    <div class="header-content">
+      <img src="Foto beranda1.jpg" alt="Kiri" id="fotokiri">
+      <div class="header-text">
+        <h1>PERUMDA AIR MINUM TIRTA SUGI LAENDE</h1>
+        <p>Melayani dengan Profesional, Bersih, dan Bertanggung Jawab</p>
+      </div>
+      <img src="foto beranda2.jpg" alt="Kanan" id="fotokanan">
+    </div>
+  </header>
 
-	<footer>
-		<p>&copy; 2025 PERUMDA AIR MINUM. All rights reserved.</p>
-	</footer>
-	<script src="script.js"></script>
-	<script>
-		checkLoginRedirect();
-	</script>
+  <section class="about">
+    <h2>Tentang Kami</h2>
+    <p>Perusahaan Daerah Air Minum (Perumda) adalah badan usaha milik daerah yang menyediakan pelayanan air bersih bagi masyarakat. Kami berkomitmen untuk memberikan layanan air yang berkualitas, berkelanjutan, dan terjangkau bagi seluruh pelanggan.</p>
+    <p>Sejak berdiri, Perumda telah melayani lebih dari 100.000 pelanggan di wilayah kami. Visi kami adalah menjadi perusahaan air minum terbaik di tingkat nasional dengan mengutamakan kepuasan pelanggan dan inovasi teknologi.</p>
+
+    <h2>Motto</h2>
+    <p><em>"Kepercayaan Pelanggan Adalah Kinerja Kami"</em></p>
+
+    <h2>Visi</h2>
+    <p>Terwujudnya Perumda Air Minum Tirta Sugi Laende Yang Sehat dan Mampu Memenuhi Standar Pelayanan 4K</p>
+
+    <h2>Misi</h2>
+    <p>A. Tercapainya Pemenuhan Standar 4K Air (Kualitas, Kuantitas, Kontinuitas, dan Keterjangkauan)</p>
+    <p>B. Peningkatan Pelayanan Air Bersih</p>
+    <p>C. Peningkatan Kinerja Keuangan</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PERUMDA AIR MINUM TIRTA SUGI LAENDE. Semua Hak Cipta Dilindungi.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+
+    const user = JSON.parse(localStorage.getItem("user"));
+    const loginBtn = document.getElementById("loginBtn");
+    if (user && loginBtn) {
+      loginBtn.innerHTML = '<i class="fas fa-user"></i>';
+      loginBtn.href = "profil.html";
+    }
+  </script>
 
 </body>
 </html>
