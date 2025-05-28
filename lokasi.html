@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cari Lokasi Terdekat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -14,6 +16,20 @@
 
     body {
       background-color: #f9f9f9;
+    }
+
+    .logo-img {
+        width: 30px;
+        margin-right: 5px;
+        object-fit: contain;
+    }
+
+    .login-btn {
+        padding: 8px 20px;
+        background-color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        border: 1px solid #ccc;
     }
 
     .menu {
@@ -126,11 +142,9 @@
 
   <nav class="navbar">
       <div style="display: flex; align-items: center;">
-		<button class="menu-toggle" onclick="toggleSidebar()">
-		  <i class="fas fa-bars"></i>
-		</button>
-		<div class="logo">TIRTA SUGI LAENDE</div>
-	  </div>
+		    <img src="LOGO PERUMDA.jpg" alt="Logo" class="logo-img">
+        <div class="logo">TIRTA SUGI LAENDE</div>
+	    </div>
       <ul class="nav-links">
         <li><a href="index.html">Beranda</a></li>
         <li><a href="tentang.html">Tentang</a></li>
@@ -158,6 +172,7 @@
       </iframe>
     </div>
   </div>
-
+</script>
+    <script src="script.js"></script>
 </body>
 </html>
