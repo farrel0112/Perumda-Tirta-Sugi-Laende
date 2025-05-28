@@ -8,8 +8,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (user && loginBtn) {
         loginBtn.innerHTML = '<i class="fas fa-user"></i>';
-        loginBtn.href = "profil.html"; // atau halaman profil kamu
+        loginBtn.href = "profil.html";
     }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+		let elements = document.querySelectorAll('.animate');
+		elements.forEach(el => el.classList.add('show'));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".fitur-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
 });
 
 function checkLoginRedirect() {
@@ -21,15 +46,13 @@ function checkLoginRedirect() {
 }
 
 window.onload = function() {
-    // Menambahkan event listener ke setiap link di navigasi
     let navLinks = document.querySelectorAll(".nav-links a");
 
     navLinks.forEach(link => {
         link.addEventListener("click", function(event) {
-            // Cek apakah link menuju ke bagian dalam halaman atau ke halaman lain
             let target = this.getAttribute("href");
             if (target.startsWith("#")) {
-                event.preventDefault(); // Mencegah reload halaman
+                event.preventDefault();
 
                 let section = document.querySelector(target);
                 if (section) {
@@ -51,8 +74,6 @@ window.onload = function() {
                 alert("Password tidak cocok!");
                 return;
             }
-
-            // Simpan ke localStorage sebagai contoh (harusnya ke backend)
             localStorage.setItem("userPhone", phone);
             localStorage.setItem("userPassword", password);
             alert("Registrasi berhasil! Silakan login.");
@@ -60,7 +81,6 @@ window.onload = function() {
         });
     }
 
-    // Form login
     let loginForm = document.getElementById("login-form");
     if (loginForm) {
         loginForm.addEventListener("submit", function(event) {
@@ -73,12 +93,10 @@ window.onload = function() {
 
             if (phone === storedPhone && password === storedPassword) {
                 alert("Login berhasil!");
-                window.location.href = "index.html"; // Redirect ke halaman utama
+                window.location.href = "index.html";
             } else {
                 alert("Nomor telepon atau password salah!");
             }
         });
     }
-	
-
 };
