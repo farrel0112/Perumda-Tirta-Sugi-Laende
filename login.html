@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -23,8 +25,14 @@
 			font-family: Arial, sans-serif;
         }
 
+        .logo-img {
+            width: 30px;
+            margin-right: 5px;
+            object-fit: contain;
+        }
+
         .login-container {
-            background: rgba(0, 0, 0, 0.7); /* Tambahkan background gelap agar teks lebih jelas */
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
             width: 300px;
@@ -114,7 +122,10 @@
 </head>
 <body>
 	<nav class="navbar">
-		<div class="logo">TIRTA SUGI LAENDE</div>
+		<div style="display: flex; align-items: center;">
+            <img src="LOGO PERUMDA.jpg" alt="Logo" class="logo-img">
+            <div class="logo">TIRTA SUGI LAENDE</div>
+	    </div>
 		<ul class="nav-links">
 			<li><a href="index.html">Beranda</a></li>
 			<li><a href="tentang.html">Tentang</a></li>
@@ -145,6 +156,8 @@
                 document.getElementById("error-msg").style.display = "block";
             }
         }
+        
+        src="script.js"
     </script>
 
 </body>
